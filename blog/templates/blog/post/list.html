@@ -1,0 +1,42 @@
+{% extends "blog/master.html" %}
+
+{% block content %}
+<style>
+	
+</style>
+		<div class="bbody">
+			<div class ="sidebar">
+				<h1 class="title"><i class="icon-fire"></i> Trending <i class="icon-fire"></i></h1>
+				<ul>
+					{% for post in posts %}
+					<li><h3><a target="_blank" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3></li>
+					{% endfor %} <hr>
+					<div class="share">
+						
+						<a href="http://www.facebook.com/sharer/sharer.php?u=http://dekutshades.tk"><i class="icon-facebook2"></i></a>
+						<a href="whatsapp://send" data-href="http://dekutshades.tk"><i class="icon-whatsapp"></i>
+						<i class="icon-twitter2"></i>
+						<a href="{% url "blog:post_feed" %}" target="_blank"><i class="icon-feed"></i></a>
+					</div>
+				</ul>
+				<br>
+			</div> 
+
+			<h1 class="title">News</h1>
+			<hr>
+			{% for post in posts %}
+				<div class="mainbbody">
+				<!-- Blog article-->
+					<h3 class="title">{{ post.title }}</h3>
+					<img class="introimg" src ="{{ post.image.url }}">	
+					<h5 class="small"><i class="icon-calendar2"></i> {{ post.publish }} <i class="icon-user"></i> {{ post.author }}</h5>
+					<p>{{ post.body|truncatewords:30|linebreaks }}</p>
+					<a href="{{ post.get_absolute_url }}"><button class="btn btn-primary" >Read More</button></a>
+					<hr>
+				</div>
+				{% endfor %}				
+				<!-- end -->
+			
+		</div>		
+		{% include "blog/pagination.html" with page=posts %}
+{% endblock %}
