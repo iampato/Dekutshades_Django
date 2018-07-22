@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
     url('blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    url('event/', include('Event.urls', namespace='Event', app_name='Event')),
     url('contact/', include('contact.urls', namespace='contact', app_name='contact')),
 ]
 

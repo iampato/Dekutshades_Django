@@ -1,0 +1,31 @@
+{% extends "Event/master.html" %}
+
+{% block content %}
+
+		{% for event in events %}
+		<div id="fh5co-product-section">
+			<div class="container">
+				<div class="row">
+					<div class="product-inner">
+						<div class="col-md-4 col-md-push-8 animate-box">
+							<div class="desc">
+								<h3 class="title">{{ event.title }}</h3>
+								<h4><i class="icon-calendar3 "></i> {{ event.date }}</h4>
+								<h4><i class="icon-location-pin"></i>{{ event.location }}</h4>
+								<p>{{ event.body }}</p>
+
+								<h4><i class="icon-wallet2"></i> {{ event.payment }} </h4>
+							</div>
+						</div>
+						<div class="col-md-8 col-md-pull-4 animate-box ">
+							<figure >
+								<a href="#"><img width="667px" height="982px" class="img-responsive" src="{{ event.image.url }}" alt="product"></a>
+							</figure>
+						</div>
+					</div>		
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+{% endblock %}

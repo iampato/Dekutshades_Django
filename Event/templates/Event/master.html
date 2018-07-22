@@ -30,9 +30,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<style>
 	
-	</style>
 	</head>
 	<body>
 	<div class="box-wrap">
@@ -48,9 +46,9 @@
 						<div class="col-md-9 main-nav">
 							<ul class="nav text-right">
 								<li><a href="/"><span>Home</span></a></li>
-								<li><a href="/event">Events</a></li>
+								<li class="active"><a href="events.html">Events</a></li>
 								<li><a href="/blog">Blog</a></li>
-								<li class="active"><a href="#">Contact</a></li>
+								<li><a href="/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -63,70 +61,18 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 float-overlay">
-							<h2>Contact Us</h2>
-							<h3>Feel free to contact us.</h3>
+							<h2>Events </h2>
+							<h3>Tag a friend to tag a friend and you will have a time of your life.</h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- END fh5co-intro-section -->
-		<div id="fh5co-contact-section">
-			<div class="container">
-				<div class="col-md-4 animate-box">
-					<h3 class="section-title">Our Address</h3>
-					<ul class="contact-info">
-						<li><i class="icon-location-pin"></i>P.O Box 657-10100, NYERI</li>
-						<li><i class="icon-phone2"></i><a href="tel:0702567012"> +254702567012</a></li>
-						<li><i class="icon-phone2"></i><a href="tel:07718221504"> +254718221504</a></li>
-						<li><i class="icon-phone2"></i><a href="tel:0708804735"> +254708804735</a></li>
-						<li><i class="icon-mail"></i><a href="mailto:858wpwaweru@gmail.com">wpwaweru858@yahoo.com</a></li>
-					</ul>
-				</div>
-				<div class="col-md-8 animate-box">
-
-
-					{% block content %}
- 					
- 					<form action="." method="post">
- 						
-
- 					    {% for non_field_error in field.non_field_errors %}
-							<p>{{ non_field_error }} </p>
-						{% endfor %}
-
- 						{% for field in form %}
-
- 						<div class="form-group row">
- 							<div class="col-md-12 field">
-								<label for="message">{{field.name }} </label>
-								
-								 {{ field }}
-								 {% csrf_token %}
-								 {% for error in field.errors %}
-								 	<p>{{ error }} </p>
-								 {% endfor %}
-							</div>
-						</div>
- 						{% endfor %}
-
-						 <div class="form-group row">
-							<div class="col-md-12 field">
-								<button type="submit" id="submit" class="btn btn-primary" >Send Message</button>
-							</div>
-						</div>
-					</form>
- 					
-					{% endblock %}
-
-
-				</div>
-			</div>
-		</div>
-		<!--
-		<div id="map" class="fh5co-map animate-box"></div>
-		 END map -->
-
+		{% block content %}
+ 
+        {% endblock %}
+		
 		<footer>
 			<div id="footer" class="fh5co-border-line">
 				<br>
