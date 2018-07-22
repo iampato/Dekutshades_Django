@@ -13,7 +13,9 @@ urlpatterns = [
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
     url('blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    url('contact/', include('contact.urls', namespace='contact', app_name='contact')),
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar
