@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
+    url('blog/', include('blog.urls', namespace='blog', app_name='blog')),
 ]
 
 if settings.DEBUG:

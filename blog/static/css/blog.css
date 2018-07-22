@@ -1,0 +1,28 @@
+.bbody{
+    width:90%;
+    margin-left:5%;
+    
+}
+.mainbbody{
+    width:67%;
+    float:left;
+    
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    Text-decoration: bold;
+}
+.introimg{
+    width:100%;
+    margin-bottom:5%;
+}
+.small{
+    font-size:12px;
+}
+.sidebar{
+    width:29%;
+    float:right;
+}
+.hr{
+    margin-bottom:10%;
+}
