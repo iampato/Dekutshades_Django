@@ -1,0 +1,77 @@
+.bbody{
+    width:90%;
+    margin-left:5%;
+    
+
+}
+.mainbbody{
+    width:67%;
+    float:left;
+    
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    Text-decoration: bold;
+}
+.introimg{
+    width:100%;
+    margin-bottom:5%;
+}
+.small{
+    font-size:12px;
+}
+.sidebar{
+    width:29%;
+    float:right;
+}
+.hr{
+    margin-bottom:10%;
+}
+.list{
+        margin-left:4%;}.small{font-size:14px;font-style:italic;}.icon-user{margin-left:2%}.icon-fire{color:red;}li{color:blue;}.share{ font-size:30px;text-align:center;}.icon-feed{color:red; }.icon-whatsapp{color:green;margin-right:2%;    }.icon-facebook2,.icon-twitter2{color:blue;margin-right:2%; }
+
+@media (max-width:600px){
+    .mainbbody{
+        float:none;
+        width:100%;
+         margin-top:5%;
+    }
+    .title{
+        margin-top:5%;
+    }
+    .sidebar{
+    width:100%;
+    float:none;
+   
+}
+}
+@media (min-width:601px) and (max-width:992px){
+    .bbody{
+    width:94%;
+}
+.mainbbody{
+    width:60%;
+    float:left;
+    margin-left:4%;
+    
+}
+.title{
+    text-decoration: bold;
+    font-family: sans-serif
+    
+}
+.introimg{
+    width:100%;
+    margin-bottom:5%;
+}
+.small{
+    font-size:12px;
+}
+.sidebar{
+    width:36%;
+    float:right;
+}
+.hr{
+    margin-bottom:10%;
+}
+}
