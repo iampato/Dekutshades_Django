@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DekutShades || Contact</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Social and trend stuff around Kimathi University." />
+	<meta name="keywords" content="dekut, kimathi university, dekutshades, mmushadows, mushene ni nyeri" />
+	<meta name="author" content="Patrick Waweru" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static "css/icomoon.css" %}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+    
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<style>
+	
+	</style>
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="fh5co-navbar-brand">
+								<a class="fh5co-logo" href="index.html">DekutShades</a>
+							</div>
+						</div>
+						<div class="col-md-9 main-nav">
+							<ul class="nav text-right">
+								<li><a href="/"><span>Home</span></a></li>
+								<li><a href="/event">Events</a></li>
+								<li><a href="/blog">Blog</a></li>
+								<li class="active"><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+		  </div>
+		</header>
+		<!-- END: header -->
+		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('/static/images/intro.jpg');">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 float-overlay">
+							<h2>Contact Us</h2>
+							<h3>Feel free to contact us.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END fh5co-intro-section -->
+		<div id="fh5co-contact-section">
+			<div class="container">
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">Our Address</h3>
+					<ul class="contact-info">
+						<li><i class="icon-location-pin"></i>P.O Box 657-10100, NYERI</li>
+						<li><i class="icon-phone2"></i><a href="tel:0702567012"> +254702567012</a></li>
+						<li><i class="icon-phone2"></i><a href="tel:07718221504"> +254718221504</a></li>
+						<li><i class="icon-phone2"></i><a href="tel:0708804735"> +254708804735</a></li>
+						<li><i class="icon-mail"></i><a href="mailto:858wpwaweru@gmail.com">wpwaweru858@yahoo.com</a></li>
+					</ul>
+				</div>
+				<div class="col-md-8 animate-box">
+
+
+					{% block content %}
+ 					<form action="." method="post">
+ 						
+ 					    {% if messages %}
+ 					    {% for message in messages %}
+ 					    <ul>
+ 					    	<li><i class="icon-warning"></i> {{ message }} </li>
+ 					    </ul>
+ 					    {% endfor %}
+ 					    {% endif %}
+						
+ 						{% for field in form %}
+
+ 						<div class="form-group row">
+ 							<div class="col-md-12 field">
+								<label for="message">{{field.name }} </label>
+								
+								 {{ field }}
+								 {% csrf_token %}
+								 {% for error in field.errors %}
+								 	<p>{{ error }} </p>
+								 {% endfor %}
+							</div>
+						</div>
+ 						{% endfor %}
+
+						 <div class="form-group row">
+							<div class="col-md-12 field">
+								<button type="submit" id="submit" class="btn btn-primary" >Send Message</button>
+							</div>
+						</div>
+					</form>
+ 					
+					{% endblock %}
+
+
+				</div>
+			</div>
+		</div>
+		<!--
+		<div id="map" class="fh5co-map animate-box"></div>
+		 END map -->
+
+		<footer>
+			<div id="footer" class="fh5co-border-line">
+				<br>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Copyright &copy2018 DekutShades. All Rights Reserved. <br>Eska Photography<br>Developed by <a href="https://Iam.github.io" target="_blank">Patrick Waweru</a></p>
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter-with-circle"></i></a>
+								<a href="#"><i class="icon-facebook-with-circle"></i></a>
+								<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- END: box-wrap -->
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js'  %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.jS' %}"></script>
+	<!-- Owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Parallax Stellar -->
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

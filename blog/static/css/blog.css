@@ -5,9 +5,8 @@
 
 }
 .mainbbody{
-    width:67%;
+    width:60%;
     float:left;
-    
 }
 .title{
     font-family: Arial, Helvetica, sans-serif;
@@ -23,12 +22,13 @@
 .sidebar{
     width:29%;
     float:right;
+    margin-left:4%;
 }
 .hr{
     margin-bottom:10%;
 }
 .list{
-        margin-left:4%;}.small{font-size:14px;font-style:italic;}.icon-user{margin-left:2%}.icon-fire{color:red;}li{color:blue;}.share{ font-size:30px;text-align:center;}.icon-feed{color:red; }.icon-whatsapp{color:green;margin-right:2%;    }.icon-facebook2,.icon-twitter2{color:blue;margin-right:2%; }
+        margin-left:5%;}.small{font-size:14px;font-style:italic;}.icon-user{margin-left:4%}.icon-fire{color:red;}li{color:blue;}.share{ font-size:30px;text-align:center;}.icon-feed{color:red; }.icon-whatsapp{color:green;margin-right:4%;    }.icon-facebook2,.icon-twitter2{color:blue;margin-right:4%; }
 
 @media (max-width:600px){
     .mainbbody{

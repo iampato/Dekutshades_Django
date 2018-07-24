@@ -1,15 +1,12 @@
-
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 # Custom Manager
-
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='published')
-
 
 # Our Post Model
 class Post(models.Model):

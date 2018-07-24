@@ -2,15 +2,17 @@
 
 {% block content %}
 <style>
-	
+	.sidebar{
+    margin-left:4%;
+}
 </style>
 		<div class="bbody">
 			<div class ="sidebar">
-				<h1 class="title"><i class="icon-fire"></i> Trending <i class="icon-fire"></i></h1>
+				<h1 class="title"><i class="icon-fire"></i> Trending <i class="icon-fire"></i></h1><hr>
 				<ul>
 					{% for post in posts %}
 					<li><h3><a target="_blank" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3></li>
-					{% endfor %} <hr>
+					{% endfor %} 
 					<div class="share">
 						
 						<a href="http://www.facebook.com/sharer/sharer.php?u=http://dekutshades.tk"><i class="icon-facebook2"></i></a>
@@ -22,8 +24,8 @@
 				<br>
 			</div> 
 
-			<h1 class="title">News</h1>
-			<hr>
+			
+			<h1 class="title"> News </h1><hr>
 			{% for post in posts %}
 				<div class="mainbbody">
 				<!-- Blog article-->

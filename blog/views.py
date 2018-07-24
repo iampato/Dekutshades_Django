@@ -1,8 +1,6 @@
-
 from django.shortcuts import render, get_object_or_404
 from .models import Post
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
-
 
 def post_list_view(request):
     object_list = Post.published.all()    

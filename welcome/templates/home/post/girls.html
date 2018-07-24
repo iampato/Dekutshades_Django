@@ -1,0 +1,29 @@
+{% extends "home/master.html" %}
+{% block content %}
+
+		<div id="fh5co-media-section">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section">
+						<h3>Top Finnest Ladies</h3>
+			</div>
+		</div>
+		
+		{% for girl in girls %}
+		<!--  article-->
+		<div class="content2 col-lg-10 animate-box">
+			<div class ="thumb">
+					<img  src="{{ girl.image.url }}" >
+					<div class="caption">
+						<h3 class="heade">{{ girl.title }}</h3>
+						<p class="contente">{{ girl.body }}</p>
+					</div>
+			</div>
+		</div>
+		{% endfor %}
+		
+		</div>
+		</div>
+		
+{% endblock %}		
+		

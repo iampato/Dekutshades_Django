@@ -1,0 +1,30 @@
+{% extends "home/master.html" %}
+{% block content %}
+
+		<div id="fh5co-media-section">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section">
+						<h3>Top Finnest Freshers</h3>
+			</div>
+		</div>
+		
+		<!--  article-->
+		{% for fresher in freshers %}
+		<div class="content2 col-lg-10 animate-box">
+			<div class ="thumb">
+					<img  src="{{ fresher.image.url }}" >
+					<div class="caption">
+						<h3 class="heade">10. Samantha Samantha </h3>
+						<p class="contente">I  am lady and thats period nonsense.
+						I  am lady and thats period nonsense.I  am lady and thats period nonsense.</p>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+		
+{% endblock %}	
+
+		
