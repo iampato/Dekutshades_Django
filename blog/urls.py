@@ -2,6 +2,7 @@ from .feeds import PostsFeed
 from django.conf.urls import url
 from . import views
  
+ 
 urlpatterns = [
 	url(r'^feed/$', PostsFeed(), name='post_feed'),
     url(r'^$', views.post_list_view, name='post_list_view'),

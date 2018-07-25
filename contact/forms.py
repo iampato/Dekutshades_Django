@@ -1,6 +1,7 @@
 from .models import Messages
 from django import forms
 
+
 class ContactForm(forms.ModelForm):
 	class Meta:
 		model = Messages
@@ -16,5 +17,3 @@ class ContactForm(forms.ModelForm):
 				raise forms.ValidationError ('You have to write something!')
 
 
-
-# 

@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post,subscribe
+
+class subscribeAdmin(admin.ModelAdmin):
+	list_display = ('Name', 'Email', 'sent_on')
+	list_filter = ( 'active','sent_on', 'updated')
+	search_fields = ('Name', 'Email')
+admin.site.register(subscribe, subscribeAdmin)
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title','slug','author','status','created')

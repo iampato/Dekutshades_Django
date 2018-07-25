@@ -9,6 +9,9 @@ class PublishedManager(models.Manager):
     def get_queryset(self):
         return super(PublishedManager,self).get_queryset().filter(status='published')
 
+class PageView(models.Model):
+    hostname = models.CharField(max_length=32)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
 # Our ladies Model
 class Girl(models.Model):
