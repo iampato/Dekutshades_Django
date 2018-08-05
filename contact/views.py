@@ -11,7 +11,7 @@ def contact(request):
 			message = form.save(commit=False)
 			message.save()
 			messages.success(request,
-				"Your message has been sent Successfully DON'T RESEND!!")
+				"Your message has been sent Successfully!!")
 	else:
 		form = ContactForm() 
 	return render(request, 'contact/contact.html',{'form':form,})
