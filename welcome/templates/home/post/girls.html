@@ -1,5 +1,10 @@
 {% extends "home/master.html" %}
 {% block content %}
+<style>
+.home{
+        text-align:center;
+    }
+</style>
 
 		<div id="fh5co-media-section">
 			<div class="container">
@@ -11,7 +16,7 @@
 		
 		{% for girl in girls %}
 		<!--  article-->
-		<div class="content2 col-lg-10 animate-box">
+		<div class="content2 col-lg-8 animate-box">
 			<div class ="thumb">
 					<img  src="{{ girl.image.url }}" >
 					<div class="caption">
@@ -24,6 +29,6 @@
 		
 		</div>
 		</div>
-		
+		<a class="home" href="/guys"><h3>Guys <i class="icon-forward"></i></h3></a>
 {% endblock %}		
 		

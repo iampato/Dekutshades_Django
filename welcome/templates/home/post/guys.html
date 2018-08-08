@@ -1,5 +1,10 @@
 {% extends "home/master.html" %}
 {% block content %}
+<style>
+.home{
+        text-align:center;
+    }
+</style>
 
 		<div id="fh5co-media-section">
 			<div class="container">
@@ -10,7 +15,7 @@
 		</div>
 		<!--  article-->
 		{% for guy in guys %}
-		<div class="content2 col-lg-9 animate-box">
+		<div class="content2 col-lg-8 animate-box">
 			<div class ="thumb">
 					<img  src="{{ guy.image.url }}" >
 					<div class="caption">
@@ -22,7 +27,7 @@
 		{% endfor %}
 		</div>
 		</div>
-		
+		<a class="home" href="/freshers"><h3>Freshers <i class="icon-forward"></i></h3></a>
 {% endblock %}		
 		
 

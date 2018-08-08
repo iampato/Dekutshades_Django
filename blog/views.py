@@ -23,7 +23,7 @@ def post_list_view(request):
             message = form.save(commit=False)
             message.save()
             messages.success(request,
-                "You subscribed Successfully!!")
+                "You Successfully subscribed!!")
     else:
         form = subscribeForm()    
     return render(request,'blog/post/list.html',{'page': page,'form':form,'posts': posts})
