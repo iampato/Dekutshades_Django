@@ -20,12 +20,10 @@
     font-size:12px;
 }
 .sidebar{
-
-    display:none;
     width:29%;
     float:right;
     margin-left:4%;
-    margin-right:1%;
+    padding-right:1%;
 }
 .hr{
     margin-bottom:10%;
