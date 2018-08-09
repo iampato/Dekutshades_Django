@@ -6,7 +6,6 @@ from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 from welcome.views import health
 
-
 sitemaps = {
  'posts': PostSitemap,
 }
@@ -19,7 +18,7 @@ urlpatterns = [
     url('event/', include('Event.urls', namespace='Event', app_name='Event')),
     url('contact/', include('contact.urls', namespace='contact', app_name='contact')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
-		name='django.contrib.sitemaps.views.sitemap'),
+        name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 
