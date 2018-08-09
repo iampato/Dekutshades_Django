@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Guy, Girl,Fresher
+from .models import Guy, Girl,Fresher,slider
 
 class GuyAdmin(admin.ModelAdmin):
     list_display = ('title','author','status','created')
@@ -26,3 +26,4 @@ class FresherAdmin(admin.ModelAdmin):
 admin.site.register(Girl)
 admin.site.register(Guy)
 admin.site.register(Fresher)
+admin.site.register(slider)

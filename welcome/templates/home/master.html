@@ -57,16 +57,11 @@
 		</header>
 		<!-- END: header -->
 		<div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn">
-			<div class="item"><img src="{% static "images/slider7.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider2.jpg" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider3.JPG" %}"alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider5.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider6.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider10.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider8.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider9.JPG" %}" alt="slide"></div>
-			<div class="item"><img src="{% static "images/slider4.JPG"%}" alt="slide"></a></div>
+		
+		{% for slider in sliders %}
+			 <div class="item"><img src="{{ slider.image.url }}" alt="slide"></div> 
+		{% endfor %}
+
 		</div>
 		<div id="fh5co-media-section">
 			<div class="container">

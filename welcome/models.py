@@ -86,3 +86,25 @@ class Fresher(models.Model):
 
     def __str__(self):
         return self.title
+
+class slider(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+    title = models.CharField(max_length=250,default='slider')
+    image = models.FileField()
+    publish = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='published')
+
+    # The default manager
+    objects = models.Manager()
+    # Custom made manager
+    published = PublishedManager()
+
+    class Meta:
+        ordering = ('-title',)
+    def __str__(self):
+        return self.title
