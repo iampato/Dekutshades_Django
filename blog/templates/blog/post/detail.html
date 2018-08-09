@@ -15,7 +15,7 @@
     <h2 class="title">{{ post.title }}</h2>
     <img class="introimg" src ="{{ post.image.url }}">
     <h5 class="small"><i class="icon-calendar2"></i> {{ post.publish }} <i class="icon-user"></i> {{ post.author }}</h5>
-    <p class="body">{{ post.body|linebreaks }}</p>
+    <p class="body">{{ post.content | safe |linebreaks }}</p>
     <a class="home" href="/blog"><h3>Return <i class="icon-backward"></i></h3></a>
     
     <div class="fb-comments" data-href="{{ post.build_absolute_uri }}"data-width="100%" data-numposts="5"></div>

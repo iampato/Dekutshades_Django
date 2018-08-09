@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 from welcome.views import health
+from filebrowser.sites import site
+
 
 sitemaps = {
  'posts': PostSitemap,
@@ -12,6 +14,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^health$', health),
     url('', include('welcome.urls', namespace='welcome', app_name='welcome')),
     url('blog/', include('blog.urls', namespace='blog', app_name='blog')),
@@ -19,6 +22,7 @@ urlpatterns = [
     url('contact/', include('contact.urls', namespace='contact', app_name='contact')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
 
 
@@ -28,3 +32,5 @@ if settings.DEBUG:
 else:
 	urlpatterns += static (settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 	urlpatterns += static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 
+
+
