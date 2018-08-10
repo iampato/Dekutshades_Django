@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,10 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'django.contrib.sitemaps',
-    'tinymce',
     'filebrowser',
+    'tinymce',
     'welcome',
     'blog',
     'contact',
@@ -130,17 +130,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+"""
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__)) 
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/') 
+MEDIA_URL = '/media/' 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static/') 
+STATIC_URL = '/static/' 
+TINYMCE_JS_URL = STATIC_URL + 'tiny_mce/tiny_mce.js' 
+TINYMCE_DEFAULT_CONFIG = {'theme': "advanced", } 
+TINYMCE_FILEBROWSER = True 
+"""
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS= [
-    os.path.join(BASE_DIR , "static")
-]
 
 INTERNAL_IPS = ['127.0.0.1']
 

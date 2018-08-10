@@ -8,13 +8,14 @@ class ContactForm(forms.ModelForm):
 		model = Messages
 		fields = ('Name','Phone', 'Email', 'Message')
 		def clean(self):
-			super(ContactForm, self).clean()
-			Name = self.cleaned_data.get('Name')
-			Phone = self.cleaned_data.get('Phone')
-			Email = self.cleaned_data.get('Email')
-			Message = self.clean_data.get('Message')
+			data = self.cleaned_data
+	
+			Name = data.get('Name')
+			Phone = data.get('Phone')
+			Email = data.get('Email')
+			Message =data.get('Message')
 			if not Name and not Phone and not Email and not Message:
 				raise forms.ValidationError ('You have to write something!')
-			return self.cleaned_data
+			return data
 
 

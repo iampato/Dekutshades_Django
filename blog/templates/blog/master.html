@@ -12,7 +12,6 @@
 
 	<link rel="shortcut icon" href="{% static 'images/logo.png' %}">
     <link rel="stylesheet" href="{% static "css/blog.css" %}">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 	
     <!-- Animate.css -->
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -71,17 +70,16 @@
 		{% block content %}
  
         {% endblock %}
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-  		var js, fjs = d.getElementsByTagName(s)[0];
- 		 if (d.getElementById(id)) return;
- 		 js = d.createElement(s); js.id = id;
- 		 js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
- 		 fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		$(window).resize(function(){$('.fb-comments iframe,.fb-comments span:first-child').css({'width':$('#commentboxcontainer').width()});});
-		</script>
 
+        <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=462199294128934";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            
 
 		<footer>
 			<div id="footer" class="fh5co-border-line">
