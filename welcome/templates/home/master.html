@@ -4,16 +4,19 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DekutShades || Welcome</title>
+	<title>DekutShades || Event</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Social and trendy stuff around Kimathi University." />
 	<meta name="keywords" content="dekut, kimathi university, dekutshades, mmushadows, mushene ni nyeri" />
 	<meta name="author" content="Patrick Waweru" />
 
-
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
-    
-    <link rel="stylesheet" href="{% static "css/tiles.css" %}">
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{% static "css/icomoon.css" %}">
@@ -26,10 +29,8 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}">
 
 	<!-- Modernizr JS -->
-	<script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
-	<script>
-		
-	</script>
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	
 	</head>
 	<body>
 	<div class="box-wrap">
@@ -45,7 +46,7 @@
 						<div class="col-md-9 main-nav">
 							<ul class="nav text-right">
 								<li class="active"><a href="/"><span>Home</span></a></li>
-								<li><a href="/event">Events</a></li>
+								<li "><a href="/event">Events</a></li>
 								<li><a href="/blog">Blog</a></li>
 								<li><a href="/contact">Contact</a></li>
 							</ul>
@@ -55,22 +56,20 @@
 		  </div>
 		</header>
 		<!-- END: header -->
-		<div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn">
-		
-		{% for slider in sliders %}
-			 <div class="item"><img src="{{ slider.image.url }}" alt="slide"></div> 
-		{% endfor %}
-
-		</div>
-		<div id="fh5co-media-section">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h3>Welcome to DekutShades</h3>
+		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('/static/images/intro.jpg');">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 float-overlay">
+							<h2>Welcome to Dekutshades </h2>
+							<h3></h3>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-
 		<!-- END fh5co-intro-section -->
+
 		{% block content %}
  
         {% endblock %}
