@@ -1,7 +1,7 @@
 # Django
 db.sqlite3
 staticfiles/
-
+*.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
