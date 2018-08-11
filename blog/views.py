@@ -1,5 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from django.shortcuts import render, get_object_or_404,redirect
+from django.core.mail import send_mail
+from django.conf import settings
 from .forms import  subscribeForm
 from django.contrib import messages
 from .models import Post,subscriber
@@ -20,10 +22,20 @@ def post_list_view(request):
         form = subscribeForm(data=request.POST)
 
         if form.is_valid():
+
+            
             message = form.save(commit=False)
             if subscriber.objects.filter(Email = message.Email).exists():
                 messages.warning(request,  "Your Email already exists in our Databases")
             else:
+                Name = request.POST.get( 'Name', '')
+                Email = request.POST.get( 'Email', '') 
+                Subject = 'Welcome to DekutShades'
+                message = 'Dear %s Welcome to dekutshades, Thanks for Subscribing to our mail.' %(Name)
+                emailFrom =  'wpwaweru858@yahoo.com'
+                emailTo =  Email 
+                send_mail(Subject,message,emailFrom,[emailTo],fail_silently=False)
+                #send_mail('hello','testing','wpwaweru858@yahoo.com',['858wpwaweru@gmail.com'],fail_silently=False)
                 message.save()
                 messages.success(request,  "You Successfully subscribed")
 
