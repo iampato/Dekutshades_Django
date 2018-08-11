@@ -1,13 +1,13 @@
-from django.shortcuts import render, get_object_or_404
-from django.contrib import messages
-from .models import Post
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
+from django.shortcuts import render, get_object_or_404,redirect
 from .forms import  subscribeForm
+from django.contrib import messages
+from .models import Post,subscriber
 
 
 def post_list_view(request):
     object_list = Post.published.all()    
-    paginator = Paginator(object_list, 5) # 3 posts in each page   
+    paginator = Paginator(object_list, 4) # 3 posts in each page   
     page = request.GET.get('page')
     try:      
         posts = paginator.page(page)
@@ -21,9 +21,14 @@ def post_list_view(request):
 
         if form.is_valid():
             message = form.save(commit=False)
-            message.save()
-            messages.success(request,
-                "You Successfully subscribed!!")
+            if subscriber.objects.filter(Email = message.Email).exists():
+                messages.warning(request,  "Your Email already exists in our Databases")
+            else:
+                message.save()
+                messages.success(request,  "You Successfully subscribed")
+
+        return redirect('/blog')
+
     else:
         form = subscribeForm()    
     return render(request,'blog/post/list.html',{'page': page,'form':form,'posts': posts})

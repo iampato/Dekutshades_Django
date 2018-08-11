@@ -8,11 +8,16 @@
 
 }
 .icon-rss3{color:orange; }
-
+input{
+	width:100%;
+}
+.blog{
+	margin-left:3%;
+}
 </style>
 		<div class="bbody">
 			<div class ="sidebar">
-				<h1 class="title"><i class="icon-fire"></i> Trending <i class="icon-fire"></i></h1><hr>
+				<h1 class="title"><i class="icon-fire"></i> Trending <i class="icon-fire"></i></h1><hr><br>
 				
 				<ul>
 					{% for post in posts %}
@@ -21,8 +26,8 @@
 				</ul>
 					<div class="share">
 						<a href="http://www.facebook.com/sharer/sharer.php?u=http://www.dekutshades.tk"><i class="icon-facebook2"></i></a>
-						<a href="whatsapp://send" data-href="http://www.dekutshades.tk"><i class="icon-whatsapp"></i>
-						<i class="icon-twitter2"></i>
+						<a href="whatsapp://send" data-href="http://www.dekutshades.tk"><i class="icon-whatsapp"></i></a>
+					<a href="https://twitter.com/intent/tweet?url=http://www.dekutshades.tk"><i class="icon-twitter2"></i></a>
 						<a href="{% url "blog:post_feed" %}" target="_blank"><i class="icon-rss3"></i></a>
 					</div><br><br>
 				
@@ -59,15 +64,17 @@
 			</div> 
 
 			
-			<h1 class="title"> News </h1><hr>
+			<h1 class="title"> Blog Feed </h1><hr>
 			{% for post in posts %}
 				<div class="mainbbody">
 				<!-- Blog article-->
-					<h3 class="title">{{ post.title }}</h3>
-					<img class="introimg" src ="{{ post.image.url }}">	
-					<h5 class="small"><i class="icon-calendar"></i> {{ post.publish }} <i class="icon-user"></i> {{ post.author }}</h5>
-					<p>{{ post.body|truncatewords:30|linebreaks }}</p>
-					<a href="{{ post.get_absolute_url }}"><button class="btn btn-primary" >Read More</button></a>
+				<br>
+					<h2 class="title" >{{ post.title }}</h2>
+					<p class="small"><i class="icon-calendar"></i> {{ post.publish }} <i class="icon-user"></i> Posted by{{ post.author }}</p>
+					<div class="blog">
+						<p>{{ post.content |safe |truncatewords:42 |linebreaks }}</p>
+						<a href="{{ post.get_absolute_url }}"><button class="btn btn-primary" >Read More</button></a>
+					</div>
 					<hr>
 				</div>
 				{% endfor %}				

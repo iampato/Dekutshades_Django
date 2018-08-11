@@ -1,6 +1,6 @@
 from django.db import models
 
-class Messages(models.Model):
+class Message(models.Model):
 	Name = models.CharField(max_length=80)
 	Phone = models.CharField(max_length=10)
 	Email = models.EmailField()
@@ -16,4 +16,3 @@ class Messages(models.Model):
 	def __str__(self):
  		return self.Email
  
-

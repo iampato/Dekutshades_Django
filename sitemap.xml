@@ -1,0 +1,34 @@
+<urlset>
+	<url>
+		<loc>http://django-psql-persistent-dekutshades.193b.starter-ca-central-1.openshiftapps.com
+/blog/2018/08/11/test005/</loc>
+		<lastmod>2018-08-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>http://django-psql-persistent-dekutshades.193b.starter-ca-central-1.openshiftapps.com
+/blog/2018/08/11/test002/</loc>
+		<lastmod>2018-08-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>http://localhost:8000/blog/2018/08/11/test001/</loc>
+		<lastmod>2018-08-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>http://localhost:8000/blog/2018/08/11/webapps/</loc>
+		<lastmod>2018-08-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>http://localhost:8000/blog/2018/08/11/django/</loc>
+		<lastmod>2018-08-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+</urlset>

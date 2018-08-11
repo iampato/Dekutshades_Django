@@ -5,10 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DekutShades || Contact</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Social and trendy stuff around Kimathi University." />
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Dekutshades">
+	
+	<meta property="og:description" name="description" content="Social and trendy stuff around Kimathi University.">
 	<meta name="keywords" content="dekut, kimathi university, dekutshades, mmushadows, mushene ni nyeri" />
 	<meta name="author" content="Patrick Waweru" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="shortcut icon" href="{% static 'images/logo.png' %}">
     <link rel="stylesheet" href="{% static "css/blog.css" %}">
@@ -30,7 +34,7 @@
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 	<style>
-	
+	input,textarea{width:100%;}
 	</style>
 	</head>
 	<body>
@@ -49,7 +53,7 @@
 								<li><a href="/"><span>Home</span></a></li>
 								<li><a href="/event">Events</a></li>
 								<li><a href="/blog">Blog</a></li>
-								<li class="active"><a href="#">Contact</a></li>
+								<li class="active"><a href="/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -86,31 +90,20 @@
 
 
 					{% block content %}
- 					<form action="" method="post">
- 						
- 					    {% if messages %}
+
+					 {% if messages %}
  					    {% for message in messages %}
  					    <ul>
  					    	<li><i class="icon-warning"></i> {{ message }} </li>
  					    </ul>
  					    {% endfor %}
- 					    {% endif %}
-						
- 						{% for field in form %}
+ 					 {% endif %}
 
- 						<div class="form-group row">
- 							<div class="col-md-12 field">
-								<label for="message">{{field.name }} </label>
-								
-								 {{ field }}
-								 {% csrf_token %}
-								 {% for error in field.errors %}
-								 	<p>{{ error }} </p>
-								 {% endfor %}
-							</div>
-						</div>
- 						{% endfor %}
-
+ 					<form action="" method="post">
+ 						
+ 						{% csrf_token %}
+   						{{ form.as_p }}
+ 					
 						 <div class="form-group row">
 							<div class="col-md-12 field">
 								<button type="submit" id="submit" class="btn btn-primary" >Send Message</button>
@@ -122,11 +115,17 @@
 
 
 				</div>
+
+				<!-- google maps -->
+				<div  class="fh5co-map animate-box">
+					<div class="col-sx-12 col-lg-12"><br><br>
+       	 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0975359033587!2d37.00831931420143!3d-1.089106399205563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f46276c2d9021%3A0xbefd8e40071d3352!2sJomo+Kenyatta+University+of+Agriculture+and+Technology!5e0!3m2!1sen!2ske!4v1496994589652" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen="True">
+       	 				</iframe>
+   					 </div>
+   				</div>
+
 			</div>
 		</div>
-		<!--
-		<div id="map" class="fh5co-map animate-box"></div>
-		 END map -->
 
 		<footer>
 			<div id="footer" class="fh5co-border-line">

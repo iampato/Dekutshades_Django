@@ -1,21 +1,21 @@
-from .models import Messages
-from django import forms
 from django.forms import ModelForm
+from django import forms
+from .models import Message
 
+# our new form
+class ContactForm(forms.Form):
+    Name = forms.CharField(required=True)
+    Phone = forms.CharField(max_length=10)
+    Email = forms.EmailField(required=True)
+    Message = forms.CharField(
+        required=True,
+        widget=forms.Textarea
+    )
 
-class ContactForm(forms.ModelForm):
-	class Meta:
-		model = Messages
-		fields = ('Name','Phone', 'Email', 'Message')
-		def clean(self):
-			data = self.cleaned_data
-	
-			Name = data.get('Name')
-			Phone = data.get('Phone')
-			Email = data.get('Email')
-			Message =data.get('Message')
-			if not Name and not Phone and not Email and not Message:
-				raise forms.ValidationError ('You have to write something!')
-			return data
+class messageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ('Name','Phone', 'Email', 'Message')
+        
 
 

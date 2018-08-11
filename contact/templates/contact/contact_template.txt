@@ -1,0 +1,12 @@
+
+Name:
+{{ Name }}
+
+Phone:
+{{ Phone }}
+
+Email:
+{{ Email }}
+
+Message:
+{{ Message|safe|striptags }}
