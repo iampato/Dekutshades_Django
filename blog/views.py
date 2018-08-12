@@ -28,15 +28,17 @@ def post_list_view(request):
             if subscriber.objects.filter(Email = message.Email).exists():
                 messages.warning(request,  "Your Email already exists in our Databases")
             else:
+                message.save()
+
                 Name = request.POST.get( 'Name', '')
                 Email = request.POST.get( 'Email', '') 
                 Subject = 'Welcome to DekutShades'
-                message = 'Dear %s Welcome to dekutshades, Thanks for Subscribing to our mail.' %(Name)
-                emailFrom =  'wpwaweru858@yahoo.com'
+                message = 'Dear %s \nWelcome to dekutshades, Thanks for Subscribing to our mail.\n By signing up you agree with our terms and Conditions where they apply. ' %(Name)
+                emailFrom =  settings.EMAIL_HOST_USER 
                 emailTo =  Email 
+                
                 send_mail(Subject,message,emailFrom,[emailTo],fail_silently=False)
                 #send_mail('hello','testing','wpwaweru858@yahoo.com',['858wpwaweru@gmail.com'],fail_silently=False)
-                message.save()
                 messages.success(request,  "You Successfully subscribed")
 
         return redirect('/blog')

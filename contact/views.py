@@ -24,14 +24,15 @@ def contact(request):
             
             Name = form.cleaned_data['Name']
             Phone = form.cleaned_data['Phone']
+            Email = form.cleaned_data['Email'] 
             Message = form.cleaned_data['Message']
-            Subject = 'Welcome to DekutShades'
+            Subject = 'DekutShades Contact '
 
-            emailFrom =  form.cleaned_data['Email'] 
-            emailTo =  settings.EMAIL_HOST_USER
+            text = "Dear Patrick,\nSomeone used the dekutshades contact form.\nHere is what was submited:\n %s\n %s\n %s\n %s\n You received this mail, because you are the admin." %(Name,Phone,Email,Message)
+            emailFrom =  settings.EMAIL_HOST_USER 
+            emailTo =  '858wpwaweru@gmail.com'
            
-            send_mail(Subject,Name,Phone,Message,emailFrom,[emailTo],fail_silently=False)
-
+            send_mail(Subject,text,emailFrom,[emailTo],fail_silently=False)
             instance = contact.save(commit=False)
             instance.save()
             messages.success(request,
