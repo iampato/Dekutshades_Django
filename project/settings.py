@@ -32,8 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.mail.yahoo.com'
-EMAIL_HOST_USER = 'wpwaweru858@yahoo.com'
-EMAIL_HOST_PASSWORD = 'bonoko1289'
+EMAIL_HOST_USER = 'example@yahoo.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
