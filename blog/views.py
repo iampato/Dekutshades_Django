@@ -22,7 +22,6 @@ def post_list_view(request):
         form = subscribeForm(data=request.POST)
 
         if form.is_valid():
-
             
             message = form.save(commit=False)
             if subscriber.objects.filter(Email = message.Email).exists():
@@ -36,6 +35,8 @@ def post_list_view(request):
                 message = 'Dear %s \nWelcome to dekutshades, Thanks for Subscribing to our mail.\n By signing up you agree with our terms and Conditions where they apply. ' %(Name)
                 emailFrom =  settings.EMAIL_HOST_USER 
                 emailTo =  Email 
+                
+                print (message)
                 
                 send_mail(Subject,message,emailFrom,[emailTo],fail_silently=False)
                 #send_mail('hello','testing','wpwaweru858@yahoo.com',['858wpwaweru@gmail.com'],fail_silently=False)
