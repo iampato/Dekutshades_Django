@@ -21,6 +21,7 @@ def index(request):
 
 def health(request):
     return HttpResponse(PageView.objects.count())
+
 # upt to this
 
 

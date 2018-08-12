@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:8000','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_HOST_USER = 'wpwaweru858@yahoo.com'
