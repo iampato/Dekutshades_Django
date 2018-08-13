@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv(
     'DJANGO_SECRET_KEY',
     # safe value used for development when DJANGO_SECRET_KEY might not be set
-    '9e4@&tw46$l31)zrqe3wi+-slqm(ruvz&se0^%9#6(_w3ui!c0'
+    
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,8 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.mail.yahoo.com'
-EMAIL_HOST_USER = 'wpwaweru858@yahoo.com'
-EMAIL_HOST_PASSWORD = 'bonoko1289'
+EMAIL_HOST_USER = 'example@yahoo.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
