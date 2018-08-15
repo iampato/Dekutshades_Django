@@ -14,6 +14,9 @@ input{
 .blog{
 	margin-left:3%;
 }
+.blogbody{
+	width:100%;
+}
 </style>
 		<div class="bbody">
 			<div class ="sidebar">
@@ -72,7 +75,7 @@ input{
 					<h2 class="title" >{{ post.title }}</h2>
 					<p class="small"><i class="icon-calendar"></i> {{ post.publish }} <i class="icon-user"></i> Posted by{{ post.author }}</p>
 					<div class="blog">
-						<p>{{ post.content |safe |truncatewords:42 |linebreaks }}</p>
+						<p class="blogbody">{{ post.content |safe |truncatewords:42 |linebreaks }}</p>
 						<a href="{{ post.get_absolute_url }}"><button class="btn btn-primary" >Read More</button></a>
 					</div>
 					<hr>

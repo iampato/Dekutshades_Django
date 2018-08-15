@@ -1,1 +1,0 @@
-http://django-psql-persistent-dekutshades.193b.starter-ca-central-1.openshiftapps.com
