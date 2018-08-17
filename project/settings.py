@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv(
     'DJANGO_SECRET_KEY',
     # safe value used for development when DJANGO_SECRET_KEY might not be set
-    '4y0pl(dqckp57)p@(cb^19!6_i@tte6+3=hz0wzt0gk@utfotf'
+    'na+&a$2t$w#f=c5@bqy%tuy$+tiq)xp7_^0-im)_ocp(-dx=it'
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['drunkingpato.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_HOST_USER = 'wpwaweru858@yahoo.com'
@@ -95,16 +95,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
+from . import database
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'dekutshades',
-        'USER': 'drunkingpato',
-        'PASSWORD': 'bonoko1289',
-        'HOST': 'drunkingpato.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-    }
+    'default': database.config()
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
